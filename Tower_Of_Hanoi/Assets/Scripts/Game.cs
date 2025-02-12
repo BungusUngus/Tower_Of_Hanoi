@@ -1,4 +1,6 @@
 using UnityEngine;
+using System.Collections;
+using TMPro;
 
 public class Game : MonoBehaviour
 {
@@ -11,10 +13,29 @@ public class Game : MonoBehaviour
     //Colour palette for our towers
     public Color regularColour, highlightedColour;
 
+    //How long between Rise and Fall animations 
+    public float animationTime = 0.5f;
 
+    //text PROPERTY; counting the number of movements. Property to push update to UI field
+    public TMP_Text turnTextDisplay;
+    private int turnCounter;
+
+    public int turnProperty
+    {
+        get
+        {
+            return turnCounter;
+        }
+        set
+        {
+            turnCounter = value;
+            turnTextDisplay.text = turnCounter.ToString();
+        }
+    }
     void Start()
     {
         ApplyPalette();
+        turnProperty = 0;
     }
 
 
@@ -38,7 +59,8 @@ public class Game : MonoBehaviour
         }
         else
         {
-            MoveTiles(selectedTower, newTower);
+            //MoveTiles(selectedTower, newTower);
+            StartCoroutine(MoveTiles(selectedTower, newTower));
             selectedTower = null;
         }
         ApplyPalette();
@@ -51,12 +73,18 @@ public class Game : MonoBehaviour
      * If the target tower is empty, move
      * or if the top tile is < target tile, move
      * move = reassign parent as the targetTower's parent
+     * 
+     * UPDATED
+     * updated to IEnumerator, allowing for the function to take place over multiple frames
+     * WaitForSeconds() will delay the movement, allowing us to trigger TileAnimations.
+     * Remember to use IEnumerators with StartCoroutine() as you call them.
+     * Also, we had turnProperty to increase with each successful movement
      */
-    public void MoveTiles(Tower fromTower, Tower toTower)
+    public IEnumerator MoveTiles(Tower fromTower, Tower toTower)
     {
         //print("Moving from" + fromTower.name + "to" + toTower.name);
         Transform topTile = fromTower.GetTopTile();
-        if (topTile == null) return;
+        if (topTile == null) yield return null;
 
 
 
@@ -64,8 +92,12 @@ public class Game : MonoBehaviour
         if (targetTile == null || topTile.GetComponent<RectTransform>().rect.width < targetTile.GetComponent<RectTransform>().rect.width)
 
         {
+            topTile.GetComponentInChildren<TileAnimations>().StartRise();
+            yield return new WaitForSeconds(animationTime);
             topTile.SetParent(toTower.towerAnchor);
             topTile.SetSiblingIndex(0);
+            turnProperty += 1;
+            topTile.GetComponentInChildren<TileAnimations>().StartFall();
         }
     }
 
