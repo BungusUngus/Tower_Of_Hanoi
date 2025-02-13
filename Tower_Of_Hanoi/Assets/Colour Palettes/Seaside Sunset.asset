@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29cafcf21098c6a448c54e4930e3bf4d, type: 3}
+  m_Name: Seaside Sunset
+  m_EditorClassIdentifier: 
+  backgroundColor: {r: 0.9811321, g: 0.67121977, b: 0, a: 1}
+  towerColor: {r: 1, g: 0.4493518, b: 0, a: 1}
+  towerHighlight: {r: 1, g: 0.88235295, b: 0, a: 1}
+  tile1Color: {r: 0.3529412, g: 0.49411768, b: 1, a: 1}
+  tile2Color: {r: 0.3529412, g: 0.72156864, b: 1, a: 1}
+  tile3Color: {r: 0.5803922, g: 0.72156864, b: 1, a: 1}
+  tile4Color: {r: 0.77254903, g: 0.72156864, b: 1, a: 1}
+  tile5Color: {r: 1, g: 0.72156864, b: 1, a: 1}
+  textColor: {r: 1, g: 0, b: 0.7487178, a: 1}

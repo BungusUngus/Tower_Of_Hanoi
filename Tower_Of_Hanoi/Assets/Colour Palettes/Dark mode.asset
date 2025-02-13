@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29cafcf21098c6a448c54e4930e3bf4d, type: 3}
   m_Name: Dark mode
   m_EditorClassIdentifier: 
-  backgroundColor: {r: 0, g: 0, b: 0, a: 0}
-  towerColor: {r: 0, g: 0, b: 0, a: 0}
-  towerHighlight: {r: 0, g: 0, b: 0, a: 0}
-  tile1Color: {r: 0, g: 0, b: 0, a: 0}
-  tile2Color: {r: 0, g: 0, b: 0, a: 0}
-  tile3Color: {r: 0, g: 0, b: 0, a: 0}
-  tile4Color: {r: 0, g: 0, b: 0, a: 0}
-  tile5Color: {r: 0, g: 0, b: 0, a: 0}
-  textColor: {r: 0, g: 0, b: 0, a: 0}
+  backgroundColor: {r: 0.24528301, g: 0.22098611, b: 0.22098611, a: 1}
+  towerColor: {r: 1, g: 0.995283, b: 0.995283, a: 1}
+  towerHighlight: {r: 0.09803922, g: 0.46666667, b: 0.078431375, a: 1}
+  tile1Color: {r: 0.4245283, g: 0.34886894, b: 0.26633143, a: 1}
+  tile2Color: {r: 0.4245283, g: 0.34886894, b: 0.26633143, a: 1}
+  tile3Color: {r: 0.4245283, g: 0.34886894, b: 0.26633143, a: 1}
+  tile4Color: {r: 0.4245283, g: 0.34886894, b: 0.26633143, a: 1}
+  tile5Color: {r: 0.4245283, g: 0.34886894, b: 0.26633143, a: 1}
+  textColor: {r: 0, g: 0.46570152, b: 0.3224012, a: 1}
